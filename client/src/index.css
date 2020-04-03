@@ -1,0 +1,20 @@
+/*@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap&subset=latin-ext');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 62.5%; /* 1rem === 10px, bo 100% = 16px, wiec 62,5% = 10px 
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem; /* żeby bazowa wielkość była 16px
+  font-family: 'Montserrat', 'sans-serif';
+}
+*/
