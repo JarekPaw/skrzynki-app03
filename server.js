@@ -27,6 +27,6 @@ if (process.env.NODE_ENV === `production`) {
 }
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port: ${port}`);
+  console.log(`Server is running on port: ${PORT}`);
 });
 // here i can connect succesfully to mongoDB skrzynki
