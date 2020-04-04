@@ -10,7 +10,7 @@ require('./src/database/mongoose');
 
 const Donation = require('./src/models/Donation');
 
-const port = process.env.PORT || 5100;
+const PORT = process.env.PORT || 5100;
 const app = express();
 // middlewear:
 app.use(cors());
@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === `production`) {
   });
 }
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port: ${port}`);
 });
 // here i can connect succesfully to mongoDB skrzynki
