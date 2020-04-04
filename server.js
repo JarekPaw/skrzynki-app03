@@ -16,7 +16,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/', routes);
+app.use('/api', routes);
 
 // Server up static assets
 if (process.env.NODE_ENV === `production`) {
@@ -30,3 +30,8 @@ app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
 });
 // here i can connect succesfully to mongoDB skrzynki
+/*
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html')); // relative path
+  });
+*/

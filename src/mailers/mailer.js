@@ -16,11 +16,7 @@ exports.send = async ({ responsible, helper, time, world, congregation }) => {
       congregation,
     );
     const msg = {
-      to: [
-        'jarekpaw@poczta.onet.pl',
-        'maciej.lorent@gmail.com',
-        'pawelberezecki@gmail.com',
-      ],
+      to: ['jarekpaw@poczta.onet.pl'],
       from: 'skrzynki-pavlikeni@vt.bg',
       subject: `Potwierdzenie datków z dnia ${time}`,
       text: massageContent,
@@ -35,3 +31,10 @@ exports.send = async ({ responsible, helper, time, world, congregation }) => {
     }
   }
 };
+
+/* 
+
+to:
+'maciej.lorent@gmail.com',
+        'pawelberezecki@gmail.com',
+*/

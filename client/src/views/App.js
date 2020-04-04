@@ -24,9 +24,7 @@ function App() {
     setDonatinosList((prevState) => [...prevState, newItem]);
     setIsModalOpen(false);
     // saving to database:
-    axios
-      .post('http://localhost:5100/donations', newItem)
-      .then((res) => console.log(res.data));
+    axios.post('/api/donation', newItem).then((res) => console.log(res.data));
   };
   // app context provider
   const contextElements = {
@@ -37,7 +35,7 @@ function App() {
   // loading all documents from database
   useEffect(() => {
     axios
-      .get('http://localhost:5100')
+      .get('/api/donations')
       .then((response) => {
         setDonatinosList((prevState) => [...prevState, ...response.data]);
         console.log(`from axios in useEffect response.data: ${response.data}`);
