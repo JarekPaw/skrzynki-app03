@@ -21,12 +21,12 @@ function App() {
   // submiting data from modal`s form
   const submitFormFn = (e, newItem) => {
     e.preventDefault();
-    setDonatinosList(prevState => [...prevState, newItem]);
+    setDonatinosList((prevState) => [...prevState, newItem]);
     setIsModalOpen(false);
     // saving to database:
     axios
       .post('http://localhost:5100/donations', newItem)
-      .then(res => console.log(res.data));
+      .then((res) => console.log(res.data));
   };
   // app context provider
   const contextElements = {
@@ -38,11 +38,11 @@ function App() {
   useEffect(() => {
     axios
       .get('http://localhost:5100')
-      .then(response => {
-        setDonatinosList(prevState => [...prevState, ...response.data]);
+      .then((response) => {
+        setDonatinosList((prevState) => [...prevState, ...response.data]);
         console.log(`from axios in useEffect response.data: ${response.data}`);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(`blad z useEffect:  ${error}`);
       });
   }, []);
@@ -59,34 +59,3 @@ function App() {
 }
 
 export default App;
-
-/*
---------------------------------------------------------------------------------------------
-const fromDb = () => {
-    fetch('http://localhost:5100')
-      .then(res => res.json())
-      .then(data => {
-        console.log(`objekt 0 helper data z fn fromDb - ${data[0].helper}`);        
-        setDonatinosList(prevState => [...prevState, ...data]);
-        return;        
-      })
-      .catch(err => console.log(`blad fn fromDb - ${err}`));
-  };
-  fromDb();
-  console.log('log z po fromDB, donationList: ' + donatinosList);
----------------------------------------------------------------------------------------------
-
-  return (
-    <AppContext.Provider value={contextElements}>
-      <Router>
-        <div className={styles.app}>
-        <Route path='/' component={Root} />
-          <Root />
-          <List data={donatinosList} />
-          {isModalOpen && <Modal />}
-        </div>
-      </Router>
-    </AppContext.Provider>
-  );
-}
-*/

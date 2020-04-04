@@ -11,14 +11,3 @@ export default function InputArea({ ...props }) {
     </div>
   );
 }
-
-/*
-<div class='field is-grouped is-grouped-multiline'>
-      <div class='control'>
-        <div class='tags has-addons'>
-          <span class='tag is-primary'>on gitter</span>
-          <Input class='tag is-primary' />
-        </div>
-      </div>
-    </div>
-*/

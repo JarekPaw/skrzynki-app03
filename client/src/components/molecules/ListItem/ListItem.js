@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 //import AppContext from '../../../context';
 //import styles from './ListItem.module.scss';
-//import P from 'components/atoms/P/P';
 
 export default function ListItem({
   responsible,

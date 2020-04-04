@@ -10,7 +10,7 @@ mongoose.connect(uri, {
 
 const connection = mongoose.connection;
 connection.once('open', () => {
-  // once the connection is opend do - console.log...
+  // once the connection is opend do...
   console.log('MongoDB database connection established successfully'); // we cen put and read to/from database using models (schema)!
 });
 
