@@ -1,12 +1,15 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-//const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI;
 
-mongoose.connect(process.env.MONGODB_URI, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-});
+mongoose
+  .connect(uri, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  })
+  .then(() => console.log('MongoDB connectet via mongoose...'))
+  .catch((err) => console.log(`Error from mongoose.connect(): ${err}`));
 
 const connection = mongoose.connection;
 connection.once('open', () => {

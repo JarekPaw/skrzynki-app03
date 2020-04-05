@@ -1,5 +1,5 @@
 // const bodyParser = require('body-parser');
-const routes = require('./src/routes');
+const routes = require('./src/routes/index'); //(1)routes to routes/index
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config(); // it works also with config({ path: '.env' })
@@ -16,7 +16,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/api', routes);
+app.use('/donations', routes);
 
 // Server up static assets
 if (process.env.NODE_ENV === `production`) {
