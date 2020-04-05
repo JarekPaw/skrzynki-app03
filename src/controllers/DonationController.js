@@ -8,6 +8,7 @@ const donation = {
   getAllDonations: (req, res) => {
     console.log(req);
     Donation.find({})
+      .sort({ time: -1 })
       .then((results) => res.json(results))
       .catch((err) => console.log(`blad przy pobieraniu wszystkich ${err}`));
   },
