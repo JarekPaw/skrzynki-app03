@@ -2,9 +2,9 @@ const router = require('express').Router();
 const { donation } = require('../controllers');
 let Donation = require('../models/Donation');
 
-router.get('/donations', donation.getAllDonations);
+router.get('/', donation.getAllDonations);
 
-router.post('/donation', donation.addDonation);
+router.post('/', donation.addDonation);
 
 module.exports = router;
 
