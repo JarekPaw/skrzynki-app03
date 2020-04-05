@@ -21,7 +21,7 @@ function App() {
   // submiting data from modal`s form
   const submitFormFn = (e, newItem) => {
     e.preventDefault();
-    setDonatinosList((prevState) => [...prevState, newItem]);
+    setDonatinosList((prevState) => [newItem, ...prevState]);
     setIsModalOpen(false);
     // saving to database:
     axios.post('/donations', newItem).then((res) => console.log(res.data));
