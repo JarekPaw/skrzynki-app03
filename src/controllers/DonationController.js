@@ -8,8 +8,8 @@ const donation = {
   getAllDonations: (req, res) => {
     console.log(req);
     Donation.find({})
-      .then(results => res.send(results))
-      .catch(err => console.log(`blad przy pobieraniu wszystkich ${err}`));
+      .then((results) => res.json(results))
+      .catch((err) => console.log(`blad przy pobieraniu wszystkich ${err}`));
   },
   addDonation: async (req, res) => {
     const newDonationContent = {
