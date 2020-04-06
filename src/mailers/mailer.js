@@ -3,7 +3,7 @@ require('dotenv').config();
 const htmlTemplate = require('../views/htmlTemplate');
 
 const sgApiKey = process.env.SENDGRID_API_KEY;
-const sgEmailArray = process.env.SG_EMAILS.split(','); // convert to array
+const sgEmailArray = process.env.SG_EMAILS.split(' '); // convert to array
 
 sgMail.setApiKey(sgApiKey);
 exports.send = async ({ responsible, helper, time, world, congregation }) => {
