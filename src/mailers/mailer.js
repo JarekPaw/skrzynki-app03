@@ -1,9 +1,10 @@
 const sgMail = require('@sendgrid/mail');
+require('dotenv').config();
 const htmlTemplate = require('../views/htmlTemplate');
 
-sgMail.setApiKey(
-  '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',
-);
+const sgApiKey = process.env.SENDGRID_API_KEY;
+
+sgMail.setApiKey(sgApiKey);
 exports.send = async ({ responsible, helper, time, world, congregation }) => {
   try {
     const massageContent = `Datki z dnia: ${time}. <br>Ogolnoswiatowa dzialalnosc: ${world}; <br>Zbor: ${congregation} <br>Wybieral:${responsible}`;
