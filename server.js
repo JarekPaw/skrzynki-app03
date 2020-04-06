@@ -1,4 +1,4 @@
-// const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser'); now we do not need body-parser
 const routes = require('./src/routes/index'); //(1)routes to routes/index
 const express = require('express');
 const cors = require('cors');

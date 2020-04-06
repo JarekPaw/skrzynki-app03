@@ -3,6 +3,7 @@ require('dotenv').config();
 const htmlTemplate = require('../views/htmlTemplate');
 
 const sgApiKey = process.env.SENDGRID_API_KEY;
+const sgEmailArray = process.env.SG_EMAIL_ARRAY;
 
 sgMail.setApiKey(sgApiKey);
 exports.send = async ({ responsible, helper, time, world, congregation }) => {
@@ -17,7 +18,7 @@ exports.send = async ({ responsible, helper, time, world, congregation }) => {
       congregation,
     );
     const msg = {
-      to: ['jarekpaw@poczta.onet.pl'],
+      to: sgEmailArray,
       from: 'skrzynki-pavlikeni@vt.bg',
       subject: `Potwierdzenie datków z dnia ${time}`,
       text: massageContent,
@@ -32,10 +33,3 @@ exports.send = async ({ responsible, helper, time, world, congregation }) => {
     }
   }
 };
-
-/* 
-
-to:
-'maciej.lorent@gmail.com',
-        'pawelberezecki@gmail.com',
-*/
